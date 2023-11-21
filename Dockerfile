@@ -1,5 +1,5 @@
-FROM amazoncorretto:17
-ARG WAR_FILE=target/*.war
-COPY ${WAR_FILE} nbaback.jar
+FROM openjdk:8
+ARG JAR_FILE=target/*.war
+COPY ${JAR_FILE} /app.war
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/nbaback.jar"]
+ENTRYPOINT ["java", "-jar", "/app.war"]
